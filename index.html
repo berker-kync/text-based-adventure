@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Adventure Game - Version 1</title>
+    <title>Text Adventure Game - Version 3</title>
 </head>
 <body>
     <h1>Welcome to the Adventure!</h1>
-    <p id="gameText">You are standing at a crossroad. Go left or right?</p>
+    <p id="gameText">You are standing at a crossroad. Do you want to go left or right?</p>
 
-    <button onclick="goLeft()">Go Left</button>
-    <button onclick="goRight()">Go Right</button>
+    <div id="choices">
+        <button onclick="goLeft()">Go Left</button>
+        <button onclick="goRight()">Go Right</button>
+    </div>
 
-    <script>
-        function goLeft() {
-            document.getElementById('gameText').textContent = "You chose to go left and found a peaceful meadow.";
-        }
+    <h3>Your Inventory:</h3>
+    <ul id="inventory"></ul>
 
-        function goRight() {
-            document.getElementById('gameText').textContent = "You chose to go right and encountered a wild animal!";
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
