@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Adventure Game - Version 1</title>
+</head>
+<body>
+    <h1>Welcome to the Adventure!</h1>
+    <p id="gameText">You are standing at a crossroad. Go left or right?</p>
+
+    <button onclick="goLeft()">Go Left</button>
+    <button onclick="goRight()">Go Right</button>
+
+    <script>
+        function goLeft() {
+            document.getElementById('gameText').textContent = "You chose to go left and found a peaceful meadow.";
+        }
+
+        function goRight() {
+            document.getElementById('gameText').textContent = "You chose to go right and encountered a wild animal!";
+        }
+    </script>
+</body>
+</html>
