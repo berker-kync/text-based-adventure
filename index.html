@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Adventure Game - Restart Option</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Welcome to the Adventure!</h1>
-    <p id="gameText">You are standing at a crossroad. Do you want to go left or right?</p>
+    <div class="container">
+        <h1>Welcome to the Adventure!</h1>
+        <p id="gameText">You are standing at a crossroad. Do you want to go left or right?</p>
 
-    <div id="choices">
-        <button onclick="goLeft()">Go Left</button>
-        <button onclick="goRight()">Go Right</button>
+        <div id="choices">
+            <button onclick="goLeft()">Go Left</button>
+            <button onclick="goRight()">Go Right</button>
+        </div>
+
+        <h3>Your Stats:</h3>
+        <p>Health: <span id="health">100</span></p>
+        <h3>Your Inventory:</h3>
+        <ul id="inventory"></ul>
+
+        <!-- Restart -->
+        <button id="restartButton" onclick="restartGame()">Restart Game</button>
     </div>
-
-    <h3>Your Stats:</h3>
-    <p>Health: <span id="health">100</span></p>
-    <h3>Your Inventory:</h3>
-    <ul id="inventory"></ul>
-
-    <!-- Restart -->
-    <button id="restartButton" onclick="restartGame()">Restart Game</button>
 
     <script src="index.js"></script>
 </body>
