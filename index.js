@@ -21,7 +21,6 @@ window.onload = function() {
         });
     }
 
-
     function restartGame() {
         inventory = [];
         hasTreasure = false;
@@ -137,6 +136,25 @@ window.onload = function() {
         const gameText = document.getElementById('gameText');
         gameText.textContent = message;
         clearChoices();
+    }
+
+    function randomEvent() {
+        const eventNumber = Math.floor(Math.random() * 3);
+        
+        if (eventNumber === 0) {
+            document.getElementById('gameText').textContent = "You found a hidden health potion! Your health has been restored.";
+            health = 100;
+            updateHealth();
+        } else if (eventNumber === 1) {
+            document.getElementById('gameText').textContent = "You stumbled upon a wild animal! Prepare to fight.";
+            updateChoices(["Fight", "Run"], fightAnimal, runAway);
+            return;
+        } else {
+            document.getElementById('gameText').textContent = "You found an old treasure chest! Inside, you find a powerful shield.";
+            inventory.push("Shield");
+            updateInventory();
+        }
+        goBackToCrossroad();
     }
 
     updateHealth();
