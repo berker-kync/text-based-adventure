@@ -3,6 +3,7 @@ window.onload = function() {
     let hasTreasure = false;
     let hasDefeatedAnimal = false;
     let health = 100;
+    let shield = false;
 
     function updateHealth() {
         document.getElementById('health').textContent = health;
@@ -26,6 +27,7 @@ window.onload = function() {
         hasTreasure = false;
         hasDefeatedAnimal = false;
         health = 100;
+        shield = false;
         updateHealth();
         updateInventory();
         goBackToCrossroad();
@@ -70,6 +72,9 @@ window.onload = function() {
             gameText.textContent = "You fought the animal with your sword and won!";
             hasDefeatedAnimal = true;
             goDeeperIntoForest();
+        } else if (shield) {
+            gameText.textContent = "You blocked the animal's attack with your shield!";
+            goBackToCrossroad();
         } else {
             gameText.textContent = "You fought the animal with your bare hands but got hurt!";
             health -= 20;
@@ -148,13 +153,12 @@ window.onload = function() {
         } else if (eventNumber === 1) {
             document.getElementById('gameText').textContent = "You stumbled upon a wild animal! Prepare to fight.";
             updateChoices(["Fight", "Run"], fightAnimal, runAway);
-            return;
         } else {
             document.getElementById('gameText').textContent = "You found an old treasure chest! Inside, you find a powerful shield.";
             inventory.push("Shield");
+            shield = true;
             updateInventory();
         }
-        goBackToCrossroad();
     }
 
     updateHealth();
