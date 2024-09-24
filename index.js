@@ -72,12 +72,15 @@ window.onload = function() {
             gameText.textContent = "You fought the animal with your sword and won!";
             hasDefeatedAnimal = true;
             goDeeperIntoForest();
-        } else if (shield) {
-            gameText.textContent = "You blocked the animal's attack with your shield!";
-            goBackToCrossroad();
         } else {
-            gameText.textContent = "You fought the animal with your bare hands but got hurt!";
-            health -= 20;
+            gameText.textContent = "You fought the animal with your bare hands!";
+            if (inventory.includes("Shield")) {
+                gameText.textContent += " Fortunately, your shield absorbed some of the damage.";
+                health -= 10;  // shied
+            } else {
+                gameText.textContent += " You took heavy damage.";
+                health -= 20;  // shield
+            }
             updateHealth();
             if (health > 0) {
                 goBackToCrossroad();
