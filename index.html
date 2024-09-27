@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Adventure Game - Restart Option</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Text Adventure Game - Improved</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the Adventure!</h1>
-        <p id="gameText">You are standing at a crossroad. Do you want to go left or right?</p>
+    <h1>Welcome to the Adventure!</h1>
+    <p id="gameText">You are standing at a crossroad. Do you want to go left or right?</p>
 
-        <div id="choices">
-            <button onclick="goLeft()">Go Left</button>
-            <button onclick="goRight()">Go Right</button>
-        </div>
-
-        <h3>Your Stats:</h3>
-        <p>Health: <span id="health">100</span></p>
-        <h3>Your Inventory:</h3>
-        <ul id="inventory"></ul>
-
-        <!-- Restart -->
-        <button id="restartButton" onclick="restartGame()">Restart Game</button>
+    <div id="choices">
+        <button onclick="goLeft()">Go Left</button>
+        <button onclick="goRight()">Go Right</button>
     </div>
+
+    <h3>Your Stats:</h3>
+    <div id="healthBar">
+        <div id="healthProgress"></div>
+    </div>
+    <p id="healthDisplay">Health: <span id="health">100</span></p>
+
+    <h3>Your Inventory:</h3>
+    <ul id="inventory"></ul>
+
+    <!-- Restart -->
+    <button id="restartButton">Restart Game</button>
+    <button id="hintButton">Hint</button>
 
     <script src="index.js"></script>
 </body>
