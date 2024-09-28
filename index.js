@@ -76,10 +76,10 @@ window.onload = function() {
             gameText.textContent = "You fought the animal with your bare hands!";
             if (inventory.includes("Shield")) {
                 gameText.textContent += " Fortunately, your shield absorbed some of the damage.";
-                health -= 10;  // shied
+                health -= 10;
             } else {
                 gameText.textContent += " You took heavy damage.";
-                health -= 20;  // shield
+                health -= 20;
             }
             updateHealth();
             if (health > 0) {
