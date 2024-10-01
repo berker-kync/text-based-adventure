@@ -50,7 +50,24 @@ window.onload = function() {
 
 
 
-
+    function loadGame() {
+        const savedState = localStorage.getItem('gameState');
+        if (savedState) {
+            const gameState = JSON.parse(savedState);
+            inventory = gameState.inventory;
+            hasTreasure = gameState.hasTreasure;
+            hasDefeatedAnimal = gameState.hasDefeatedAnimal;
+            health = gameState.health;
+            shield = gameState.shield;
+            updateHealth();
+            updateInventory();
+            alert("Game loaded successfully!");
+        } else {
+            alert("No saved game found!");
+        }
+    }
+    
+    document.getElementById('loadButton').onclick = loadGame;
 
 
 
