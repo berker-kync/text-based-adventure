@@ -33,6 +33,30 @@ window.onload = function() {
         goBackToCrossroad();
     }
 
+    function saveGame() {
+        const gameState = {
+            inventory: inventory,
+            hasTreasure: hasTreasure,
+            hasDefeatedAnimal: hasDefeatedAnimal,
+            health: health,
+            shield: shield,
+        };
+        localStorage.setItem('gameState', JSON.stringify(gameState));
+        alert("Game saved successfully!");
+    }
+    
+    document.getElementById('saveButton').onclick = saveGame;
+
+
+
+
+
+
+
+
+
+
+
     document.getElementById('restartButton').onclick = restartGame;
 
     function goLeft() {
