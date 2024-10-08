@@ -56,6 +56,15 @@ window.onload = function() {
     
     document.getElementById('clearSaveButton').onclick = clearSaveData;
 
+    window.onload = function() {
+        const savedState = localStorage.getItem('gameState');
+        if (savedState) {
+            loadGame();
+        } else {
+            restartGame();  
+        }
+    };
+
 
     function loadGame() {
         const savedState = localStorage.getItem('gameState');
