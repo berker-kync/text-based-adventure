@@ -50,7 +50,8 @@ window.onload = function() {
 
     function clearSaveData() {
         localStorage.removeItem('gameState');
-        alert("Saved game data cleared!");
+        restartGame();
+        alert("Saved game data cleared! Game reset.");
     }
     
     document.getElementById('clearSaveButton').onclick = clearSaveData;
