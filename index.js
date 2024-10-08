@@ -48,6 +48,12 @@ window.onload = function() {
     document.getElementById('saveButton').onclick = saveGame;
 
 
+    function clearSaveData() {
+        localStorage.removeItem('gameState');
+        alert("Saved game data cleared!");
+    }
+    
+    document.getElementById('clearSaveButton').onclick = clearSaveData;
 
 
     function loadGame() {
